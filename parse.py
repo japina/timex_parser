@@ -69,10 +69,10 @@ def parseSegment(a):
 
 
 
-def parseTimexData(lines):
+def parseTimexData(lines,creator_name):
     current_time = str(datetime.datetime.now()).replace(" ","T")+"Z"
     out_gpx = open("out.gpx","wt")
-    out_gpx.write('<gpx version="1.1" creator="TimexParser" ')
+    out_gpx.write('<gpx version="1.1" creator="'+creator_name+'" ')
     out_gpx.write('xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/0" ')
     out_gpx.write('xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">')
     out_gpx.write('<trk><name>ACTIVE LOG</name><trkseg>')
